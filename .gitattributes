@@ -1,3 +1,5 @@
-Workshop-Management-System/* linguist-language=Python
-Workshop-Management-System/WMS/* linguist-language=Python
-Workshop-Management-System/Workshop_Management_System/* linguist-language=Python
+# .gitattributes file
+
+Workshop-Management-System/*.py linguist-language=Python
+Workshop-Management-System/WMS/*.py linguist-language=Python
+Workshop-Management-System/Workshop_Management_System/*.py linguist-language=Python

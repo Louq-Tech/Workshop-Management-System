@@ -3,3 +3,7 @@
 Workshop-Management-System/*.py linguist-language=Python
 Workshop-Management-System/WMS/*.py linguist-language=Python
 Workshop-Management-System/Workshop_Management_System/*.py linguist-language=Python
+
+Workshop-Management-System/*.html linguist-detectable=false
+Workshop-Management-System/*.js linguist-detectable=false
+Workshop-Management-System/*.css linguist-detectable=false

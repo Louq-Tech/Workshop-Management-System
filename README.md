@@ -5,9 +5,9 @@ This is the project which we made when when were in Industrial attachment(Field/
 It is fine for me to say that it helped me a lot into my backend development, although it is not a completed project but i gained a lot of things doing this project.
 
 ### Supervisors Acknowledgement
-I like to provide my appreciation to Mr. Rajab Singo who provided this project to us which spiked my backend development to life, but also my appreciations go to Mr. Oscar who provided me tips for making even great information system in my next projects, appreciation to Mr. Justine also who mostly worked with us in technical and hardware stuffs, my appreciation extends to Mr. Fred, Mr. Yahya, Mr. Kassim etc.
+I like to provide my appreciation to Mr. Rajab Singo who provided this project to us which spiked my backend development to life, but also my appreciations goes to Mr. Oscar who provided me tips for making even great information system in my next projects, appreciation to Mr. Justine also who mostly worked with us in technical and hardware stuffs, my appreciation extends to Mr. Fred, Mr. Yahya, Mr. Kassim etc.
 
-### Contributers
+### Contributors
 Much appreciations to my fellow colleagues who also did the project with me
 - Wright
 - Kassim

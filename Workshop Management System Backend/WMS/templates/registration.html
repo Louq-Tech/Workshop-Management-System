@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}?{%now 'U' %}">
+    <title>Workshop Management System: Registraton</title>
+</head>
+
+<body>
+    <header>
+        <div class="top_bar">
+            <h3>Workshop Management System</h3>
+        </div>
+    </header>
+
+    <main>
+        <form method="post" class="registration-form">
+            {% csrf_token %}
+            <div class="top-form-div">
+                <img class="form-image" src="{% static 'images/organizer.svg' %}" alt="Organizer Image">
+                <p class="title">Register</p>
+            </div>
+            <div class="form_button">
+                <input type="text" class="inputs" placeholder="Username" name="username" required />
+                <input type="tel" class="inputs" placeholder="Phone Number" name="contacts" required />
+                <input type="email" class="inputs" placeholder="Email" name="email" />
+                <!-- <select id="roleSelect" class="inputs" name="role">
+                    <option value="" selected>Please choose your role</option>
+                    <option value="Administrator">Administrator</option>
+                    <option value="Organizer">Organizer</option>
+                    <option value="Technician">Technician</option>
+                </select> -->
+                <input type="password" class="inputs" placeholder="Password" name="password" required />
+                <input type="password" class="inputs" placeholder="Confirm Password" required />
+                <div class="button">
+                    <input type="submit" value="Register" style="background-color: #070929;
+                    border: none;
+                    outline: none;
+                    text-decoration: none;
+                    color: #FFFFFF;
+                    font-size: 20px;
+                    background-color: #070929;
+                    width: 40%;
+                    padding: 10px;
+                    border-radius: 10px;
+                    text-align: center;
+                    margin-top: 20px;
+                    box-shadow: 0px 4px 27px -10px rgba(0, 0, 0, 0.25);">
+                    <a href="{% url 'Login'%}">Already have an account?</a>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script src="{% static 'js/app.js' %}"></script>
+</body>
+
+</html>

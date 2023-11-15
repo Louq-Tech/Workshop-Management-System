@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://kit.fontawesome.com/ea6d0ca8d1.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="{% static 'css/organizer_dashboard.css'%}?{%now 'U'%}" />
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <title>Workshop Management System</title>
+</head>
+
+<body>
+  <nav>
+    <div class="rectangle-container close">
+      <div class="image-text">
+        <span class="image">
+          <img src="{% static 'images/logo.png'%}" alt="Logo" />
+        </span>
+        <div class="text header-text">
+          <span class="name">WORKSHOP<br />MANAGEMENT SYSTEM</span>
+        </div>
+      </div>
+    </div>
+    <div class="dashboard-toggler">
+      <i class="bx bx-menu toggle"></i>
+      <span class="dashboard">Dashboard</span>
+    </div>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search...." />
+      <i class="bx bx-search-alt-2"></i>
+    </div>
+
+    <div class="user-details">
+      <img class="profile-details" src="{% static 'images/dp.jpg' %}" alt="prof pic" />
+      <span class="admin_name">{{ username }}</span>
+      <i class="bx bxs-chevron-down"></i>
+    </div>
+  </nav>
+
+  <section class="home-section">
+    <div class="sidebar close">
+      <div class="menu-bar">
+        <div class="menu">
+          <ul class="menu-links">
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-home-alt icon"></i>
+                <span class="text nav-text">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-user icon"></i>
+                <span class="text nav-text">User</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-buildings icon"></i>
+                <span class="text nav-text">Workshop</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-message-rounded-dots icon"></i>
+                <span class="text nav-text">Message</span>
+              </a>
+            </li>
+            <li class="nav-link">
+              <a href="#">
+                <i class="bx bx-cog icon"></i>
+                <span class="text nav-text">System Config</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bottom-content">
+          <li class="">
+            <a href="{% url 'Logout' %}">
+              <i class="bx bx-log-out icon"></i>
+              <span class="text nav-text">Log Out</span>
+            </a>
+          </li>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-contents">
+      <div class="task-bar">
+        <div class="task1">
+          <div class="title">
+            <div class="left">
+              <h4 class="text">Task Details</h4>
+              <button class="add_task" onclick="showPopup()">Add Task</button>
+
+              <div id="popup" class="popup">
+                <div class="popup-content">
+                  <div>
+                    <span class="close" onclick="hidePopup()">&times;</span>
+                  </div>
+                  <form method="post" class="task-assignment-form">
+                    {% csrf_token %}
+                    <div class="form-row">
+                      <input placeholder="Category" type="text" id="category" name="category" />
+                    </div>
+
+                    <div class="form-row">
+                      <input placeholder="Device" type="text" id="device" name="device" />
+                    </div>
+
+                    <div class="form-row">
+                      <input placeholder="Task" type="text" id="task" name="task" />
+                    </div>
+
+                    <div class="form-row">
+                      <input placeholder="Deadline" type="date" id="deadline" name="deadline" />
+                    </div>
+
+                    <div class="form-row">
+                      <select name="technician">
+                        {% for technicians_list in technicians_list %}
+                        <option value="{{ technicians_list }}">
+                          {{ technicians_list}}
+                        </option>
+                        {% endfor %}
+                      </select>
+                    </div>
+                    <div class="form-row in-btn">
+                      <button type="submit" class="add_task inside-popup" value="Add Task">
+                        Add Task
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="right">
+              <div class="fst-word">
+                <span class="number01">{{tasks_done}}</span>
+                <span class="status">Done</span>
+              </div>
+              <div class="sec-word">
+                <span class="number02">{{tasks_pending}}</span>
+                <span class="status1">Pending</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="total">
+          <h3 class="total-text">
+            {{total_task}} Total,
+            <span class="remaining-words">Pending tasks available</span>
+          </h3>
+        </div>
+        <div class="tasks">
+          <div class="task-data">
+            <p class="task-name">Category</p>
+            <p class="task-name">Device</p>
+            <p class="task-name">Task</p>
+            <p class="task-name">Status</p>
+            <p class="task-name">Deadline</p>
+            <p class="task-name">Technician Assigned</p>
+            <p class="task-name">Action</p>
+          </div>
+
+          {% if tasks_paginator %}
+          {% for task in tasks_paginator %}
+          <div class="task-data">
+            <p class="task-name task-info">{{ task.category }}</p>
+            <p class="task-name task-info">{{ task.device }}</p>
+            <p class="task-name task-info">{{ task.task }}</p>
+            <p class="task-name task-info">{{ task.status }}</p>
+            <p class="task-name task-info">{{ task.deadline }}</p>
+            <p class="task-name task-info">{{ task.technician_assigned|title }}</p>
+            {% if task.status == "Pending"%}
+
+            <div class="action-icons">
+              <form method="post" action="{% url 'Edit_Task' task.id %}" class="postpone-button-form">
+                {% csrf_token %}
+                <button class="edit" onclick="showPopup()">Edit</button>
+              </form>
+              
+              <form method="post" action="{% url 'Postpone_Task' task.id %}" class="postpone-button-form">
+                {% csrf_token %}
+                <button class="postpone">Postpone</button>
+              </form>
+              {% elif task.status == "Postponed" %}
+              <div class="action-icons">
+                <form method="post" action="{% url 'Undo_Task' task.id %}" class="postpone-button-form">
+                  {% csrf_token %}
+                  <button class="postpone undo">Undo</button>
+                </form>
+                <form method="post" action="{% url 'Delete_Task' task.id %}" class="postpone-button-form">
+                  {% csrf_token %}
+                  <button class="postpone">Delete</button>
+                </form>
+                {%endif%}
+              </div>
+            </div>
+            {% endfor %}
+
+            {% else %}
+            <p>No task is available</p>
+
+            {% endif %}
+          </div>
+          <div class="page-numbers">
+            {% if tasks_paginator.has_previous %}
+            <a href="?page={{ tasks_paginator.previous_page_number }}">Previous</a>
+            {% endif %}
+            {% for num in tasks_paginator.paginator.page_range %}
+            {% if num == tasks_paginator.number %}
+            <span>{{ num }}</span>
+            {% else %}
+            <a href="?page={{ num }}">{{ num }}</a>
+            {% endif %}
+            {% endfor %}
+            {% if tasks_paginator.has_next %}
+            <a href="?page={{ tasks_paginator.next_page_number }}">Next</a>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="user-details-bar">
+          <div class="user-details">
+            <div class="title">
+              <div class="left">
+                <span class="text">User Details</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="total">
+            <h3 class="total-text">
+              {{total_users}}
+              <span class="remaining-words">Technicians</span>
+            </h3>
+          </div>
+          <div class="tasks">
+            <div class="task-data">
+              <p class="task-name">User ID</p>
+              <p class="task-name">Username</p>
+              <p class="task-name">Contact</p>
+              <p class="task-name">Email</p>
+              <p class="task-name">Task on Desk</p>
+              <p class="task-name">Role</p>
+              <p class="task-name">Action</p>
+            </div>
+
+            {% for user in users %}
+            <div class="task-data">
+              <p class="task-name task-info">{{user.id}}</p>
+              <p class="task-name task-info">{{user.username|title}}</p>
+              <p class="task-name task-info">{{user.contacts}}</p>
+              <p class="task-name task-info">{{user.email}}</p>
+              <p class="task-name task-info">Nil</p>
+              <p class="task-name task-info">{{user.role}}</p>
+              </form>
+              <form method="post" action="{% url 'Delete_User' user.id %}" class="postpone-button-form">
+                {% csrf_token %}
+                <button class="postpone">Delete User</button>
+              </form>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+  </section>
+  <script src="{% static 'js/scriptOne.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,211 @@
+body{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+/* USER DETAILS CSS */
+.user-details-bar {
+    position: relative;
+    left: 100px;
+    width: 1275px;
+    border: 2px solid rgba(217, 217, 217, 0.30);;
+    border-radius: 15px;
+    padding: 20px;
+    display: inline-block;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-details-bar .user-details .user-title {
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.user-details .user-total {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.user-details .user-total .user-remain-words {
+    color: #070929;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user-data {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.user-details .user-type {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+}
+
+.user-name{
+    color: #949494;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user-details .user-list {
+    color: #070929;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.user-stats {
+    list-style: none;
+    align-items: center;
+}
+
+/* Style for User Roles */
+.user-details .in-progress {
+    color: rgba(7, 166, 255, 0.54);
+}
+
+.user-details .done {
+    color: green;
+    font-size: 14px;
+}
+
+.user-status-icon {
+    margin-right: 0.1em;
+    align-items: center;
+}
+
+.assigning_block {
+    border: 1.5px solid #CCCCCC;
+    border-radius: 10px;
+    width: 90%;
+    margin: 20px 0px 0px 100px;
+    padding: 10px;
+}
+
+.add_task{
+    background-color: #00CC00;
+    padding: 10px;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.postpone, .remove_user{
+    background-color: #CC0000;
+    padding: 10px;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.edit{
+    background-color: #ffc800;
+    padding: 10px;
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.edit:hover{
+    background-color: #eea800;
+}
+
+.add_task:hover{
+    background-color: #00AA00;
+}
+
+.postpone:hover, .remove_user:hover{
+    background-color: #AA0000;
+}
+
+.main-contents{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    margin: 30px 0px 0px 100px;
+}
+
+/* @media screen and (max-width: 1200px) {
+    body{
+        background: red;
+    }    
+} */
+
+.task-assignment-form{
+
+}
+
+.form-row{
+    display: flex;
+    padding: 10px;
+    
+}
+
+label{
+    font-size: 20px;
+    width: 40%;
+}
+
+.inside-popup{
+    width: 100px;
+}
+
+.in-btn{
+    display: flex;
+    justify-content: center;
+    margin-left: -25px;
+}
+
+input{
+    padding: 2px 2px 2px 10px;
+    font-size: 18px;
+    width: 90%;
+    border-radius: 20px;
+    border: 2px solid #CCCCCC;
+    outline: none;
+    margin-left: 15px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 30%;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}

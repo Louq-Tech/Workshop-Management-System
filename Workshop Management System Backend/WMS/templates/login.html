@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}?{% now 'U' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900&display=swap" rel="stylesheet">
+    <title>Workshop Management System: Organizer Registraton</title>
+</head>
+
+<body>
+    <header>
+        <div class="top_bar">
+            <h3>Workshop Management System</h3>
+        </div>
+    </header>
+
+    <main>
+        <form method="post" class="registration-form">
+            {% csrf_token %}
+            <div class="top-form-div">
+
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-danger" role="alert" style="background-color: rgba(255, 0, 0, 0.5); color: #990000; padding: 10px; border-radius: 5px; margin-bottom: 30px; text-align: center;">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+                
+                <img class="form-image" src="{% static 'images/organizer.svg' %}" alt="Organizer Image">
+                <p class="title">Login</p>
+            </div>
+            <div class="form_button">
+                <input type="text" class="inputs" placeholder="Username / Email" name="username" />
+                <input type="password" class="inputs" placeholder="Password" name="password" />
+                <div class="button">
+                    <input type="submit" value="Login" class="register-link">
+                    <a href="{% url 'Registration'%}">Don't have an account?</a>
+                </div>
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>

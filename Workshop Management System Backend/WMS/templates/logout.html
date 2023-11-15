@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/logout.css' %}?{%now 'U'%}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;0,6..12,900;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700;1,6..12,800;1,6..12,900&display=swap" rel="stylesheet">
+    <title>Workshop Management System: Organizer Registraton</title>
+</head>
+
+<body>
+    <header>
+        <div class="top_bar">
+            <h3>Workshop Management System</h3>
+        </div>
+    </header>
+
+    <main>
+        <div class="logged-out">
+            <h3 class="message" style="text-align: center;">You have successfully<br>logged out</h3>
+            <div class="button">
+                <a class="confirm" href="{% url 'Registration'%}">Okay</a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

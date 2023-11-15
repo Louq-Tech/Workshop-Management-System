@@ -1,0 +1,102 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+.top_bar{
+    background-color: #070929;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top_bar h3{
+    color: white;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 85vh;
+}
+
+.registration-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 2px 10px 1px #4d4d4d67;
+    width: 500px;
+    height: 450px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+.top-form-div{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-image{
+    width: 60px;
+    height: auto;
+}
+
+.title{
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.form_button{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+input[type="submit"]{
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 20px;
+    background-color: #070929;
+    width: 40%;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: 0px 4px 27px -10px rgba(0, 0, 0, 0.25);
+}
+
+.inputs{
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: #4B4B4B;
+    font-size: 18px;
+    background-color: #E6E6E6;
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 27px -10px rgba(0, 0, 0, 0.25) inset;  
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+a{
+    margin-top: 20px;
+}

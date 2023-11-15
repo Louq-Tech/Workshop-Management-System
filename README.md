@@ -15,4 +15,5 @@ Much appreciations to my fellow colleagues who also did the project with me
 - Fatma Hameem
 - Neema
 - Khatib
+- Gerald
 - Max

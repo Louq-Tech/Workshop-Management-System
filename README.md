@@ -1,5 +1,5 @@
 ### Why This Project?
-This is the project which we made when when were in Industrial attachment(Field/Practical Learning). It was made under the supervision of Said Salim Bakhresa IT Department siuated in Tazara. I contributed in this project mostly as a backend developer using python with Django Framework.
+This is the project which we made when when were in Industrial attachment(Field/Practical Learning). It was made under the supervision of Said Salim Bakhresa IT Department situated in Tazara. I contributed in this project mostly as a backend developer using python with Django Framework.
 
 ### How Much Did it help me?
 It is fine for me to say that it helped me a lot into my backend development, although it is not a completed project but i gained a lot of things doing this project.

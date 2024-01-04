@@ -4,6 +4,5 @@ Workshop-Management-System/*.py linguist-language=Python
 Workshop-Management-System/WMS/*.py linguist-language=Python
 Workshop-Management-System/Workshop_Management_System/*.py linguist-language=Python
 
-*.html linguist-detectable=false
 *.css linguist-detectable=false
 *.js linguist-detectable=false
